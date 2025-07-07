@@ -17,7 +17,8 @@ const AdminLogin = () => {
     mutationFn: loginAdminAPI,
     onSuccess: (data) => {
       console.log('Login Successful:', data);
-      toast.success("Login Successful");
+      toast.success("Login Successful as an Admin" );
+
          setFormData({
       userName: '', 
       password: '' 
