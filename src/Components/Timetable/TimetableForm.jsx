@@ -1,96 +1,60 @@
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { fetchTimetableOptions } from "../../APIs/Public/TimetableApi";
 
-export const TimetableForm = ({ onSubmit }) => {
-  const [formData, setFormData] = useState({
-    department: "",
-    semester: "",
-    section: "",
-  });
-
- const { data, isLoading } = useQuery({
-    queryKey: ["timetable-options"],
-    queryFn: fetchTimetableOptions,
- });
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
-  };
-
-  if (isLoading) return <p>Loading form options...</p>;
-
-  const { departments = [], semesters = [], sections = [] } = data || {};
-
+export const TimetableForm = () => {
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center mx-auto gap-6 py-8 px-4">
-      <div className="w-full">
-        <label htmlFor="department" className="block mb-2 text-lg font-semibold text-gray-800">
+    <form className="w-full flex flex-col gap-4">
+      {/* Department */}
+      <label htmlFor="department" className="flex flex-col gap-1">
+        <p className="text-[1.1rem] sm:text-[1.2rem] font-semibold text-[#293080]">
           Department
-        </label>
+        </p>
         <select
           id="department"
-          name="department"
-          value={formData.department}
-          onChange={handleChange}
-          required
-          className="w-full border border-[#293080] outline-none py-2 px-3 rounded-md focus:ring-2 focus:ring-[#293080]"
+          className="w-full outline-none border-2 border-[#293080] rounded-md px-3 py-2 text-gray-700 text-sm"
         >
           <option value="">Select Department</option>
-          {departments.map((dep) => (
-            <option key={dep} value={dep}>{dep}</option>
-          ))}
+          <option value="IT">BS IT</option>
+          <option value="CS">BS CS</option>
         </select>
-      </div>
+      </label>
 
-      <div className="w-full flex flex-col md:flex-row gap-6">
-        <div className="w-full">
-          <label htmlFor="semester" className="block mb-2 font-medium">Semester</label>
+      {/* Semester & Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <label htmlFor="semester" className="flex flex-col gap-1">
+          <p className="text-[1.1rem] sm:text-[1.2rem] font-semibold text-[#293080]">
+            Semester
+          </p>
           <select
             id="semester"
-            name="semester"
-            value={formData.semester}
-            onChange={handleChange}
-            required
-            className="w-full border border-[#293080] outline-none py-2 px-3 rounded-md focus:ring-2 focus:ring-[#293080]"
+            className="w-full outline-none border-2 border-[#293080] rounded-md px-3 py-2 text-gray-700 text-sm"
           >
             <option value="">Select Semester</option>
-            {semesters.map((sem) => (
-              <option key={sem} value={sem}>{sem}</option>
-            ))}
+            <option value="6th">6th</option>
+            <option value="8th">8th</option>
           </select>
-        </div>
+        </label>
 
-        <div className="w-full">
-          <label htmlFor="section" className="block mb-2 font-medium">Section</label>
+        <label htmlFor="section" className="flex flex-col gap-1">
+          <p className="text-[1.1rem] sm:text-[1.2rem] font-semibold text-[#293080]">
+            Section
+          </p>
           <select
             id="section"
-            name="section"
-            value={formData.section}
-            onChange={handleChange}
-            required
-            className="w-full border border-[#293080] outline-none py-2 px-3 rounded-md focus:ring-2 focus:ring-[#293080]"
+            className="w-full outline-none border-2 border-[#293080] rounded-md px-3 py-2 text-gray-700 text-sm"
           >
             <option value="">Select Section</option>
-            {sections.map((sec) => (
-              <option key={sec} value={sec}>{sec}</option>
-            ))}
+            <option value="A">A</option>
+            <option value="B">B</option>
           </select>
-        </div>
+        </label>
       </div>
-
-      <button type="submit" className="relative px-10 py-2 overflow-hidden border border-[#293080] text-white bg-[#293080] rounded-md group transition-all duration-500 ease-out cursor-pointer">
-        <span className="relative z-10 flex items-center gap-2 transition-all duration-500 group-hover:text-[#293080]">
-          <CiSearch size={22} /> View Timetable
+      <button
+        type="submit"
+        className="relative mt-4 px-6 py-2 w-full max-w-xs mx-auto overflow-hidden border border-[#293080] text-white bg-[#293080] rounded-full group transition-all duration-500 ease-out cursor-pointer text-sm"
+        disabled
+      >
+        <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-[#293080]">
+          <CiSearch size={20} /> View Timetable
         </span>
         <span className="absolute inset-0 bg-white transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></span>
       </button>
