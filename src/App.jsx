@@ -1,7 +1,7 @@
 import React from 'react'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Softwares from './Pages/Public/Softwares';
 const App = () => {
   return (
     <div>
@@ -17,6 +17,7 @@ const App = () => {
         pauseOnHover
         
       />
+  
     </div>
   )
 }
