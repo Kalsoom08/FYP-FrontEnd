@@ -3,7 +3,6 @@ import { CiSearch } from "react-icons/ci";
 export const TimetableForm = () => {
   return (
     <form className="w-full flex flex-col gap-4">
-      {/* Department */}
       <label htmlFor="department" className="flex flex-col gap-1">
         <p className="text-[1.1rem] sm:text-[1.2rem] font-semibold text-[#293080]">
           Department
@@ -17,8 +16,6 @@ export const TimetableForm = () => {
           <option value="CS">BS CS</option>
         </select>
       </label>
-
-      {/* Semester & Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <label htmlFor="semester" className="flex flex-col gap-1">
           <p className="text-[1.1rem] sm:text-[1.2rem] font-semibold text-[#293080]">
