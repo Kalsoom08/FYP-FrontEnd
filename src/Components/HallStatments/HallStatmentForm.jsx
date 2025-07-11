@@ -35,7 +35,7 @@ export const HallStatementForm = () => {
                         disabled
                       >
                         <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-[#293080]">
-                          <CiSearch size={20} /> View Timetable
+                          <CiSearch size={20} /> View Hall Statment
                         </span>
                         <span className="absolute inset-0 bg-white transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-700 ease-in-out"></span>
                 </button>

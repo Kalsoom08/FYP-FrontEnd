@@ -1,5 +1,5 @@
-import { HallStatementCard } from "../../Components/HallStatments.jsx/HallStatementCard";
-import { HallStatementForm } from "../../Components/HallStatments.jsx/HallStatmentForm";
+import { HallStatementCard } from "../../Components/HallStatments/HallStatementCard";
+import { HallStatementForm } from "../../Components/HallStatments/HallStatmentForm";
 
 export const HallStatement = () => {
   return (
