@@ -25,7 +25,7 @@ export const menuItems = [
     links: [
       { label: "Registration", path: "/students/registration" },
       { label: "Renewal", path: "/students/feeslip" },
-      { label: "New Students Rollnumber", path: "/rollnumber" },
+      { label: "New Students Rollnumber", path: "/students/rollnumber" },
     ],
   },
   {
