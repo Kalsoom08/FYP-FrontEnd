@@ -1,9 +1,13 @@
 import React from 'react';
+import { HeroSection } from '../../Components/Home/HeroSection';
+import { MomentsOfPride } from '../../Components/Home/MomentsOfPride';
+
 
 export const Home = () => {
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold">Welcome to the Home Page</h1>
-    </div>
+   <>
+     <HeroSection />
+    <MomentsOfPride />
+   </>
   );
 };

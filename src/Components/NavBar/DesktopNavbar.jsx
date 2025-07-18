@@ -32,7 +32,7 @@ export const DesktopNavbar = () => {
     "px-4 py-2 hover:bg-[#3340CC]/80 hover:text-white transition duration-200";
 
   return (
-    <nav ref={navRef} className="p-4 bg-[#293080] text-white shadow-md z-50 relative">
+    <nav ref={navRef} className="px-4 py-2 bg-[#293080] text-white shadow-md z-50 relative">
       <ul className="flex gap-6 items-center justify-center">
         <li>
           <Link to="/" className="hover:text-gray-300 transition duration-200">
