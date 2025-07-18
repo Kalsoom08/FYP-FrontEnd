@@ -7,6 +7,7 @@ import { Examinations } from './Layout/Examinations/Examinations';
 import { Home } from './Pages/Public/Home';
 import {Students} from '../src/Layout/Students/Students';
 import Navbar from './Components/NavBar/Navbar';
+import Footer from '../src/Components/Footer/Footer';
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
 
         </Routes>
       </div>
-
+      <Footer/>
       <ToastContainer
         position="top-right"
         autoClose={3000}
